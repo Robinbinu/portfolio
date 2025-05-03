@@ -6,7 +6,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://robin.github.io',
+  site: 'https://robinbinu.github.io',
   base: 'portfolio',
   integrations: [mdx(), sitemap(), icon()],
   vite: {
