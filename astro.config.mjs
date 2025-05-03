@@ -7,7 +7,8 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astroship.web3templates.com",
+  site: 'https://robin.github.io',
+  base: 'portfolio',
   integrations: [mdx(), sitemap(), icon(),tailwind()],
   vite: {
     plugins: [tailwindcss()],
