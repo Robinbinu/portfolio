@@ -11,7 +11,7 @@ const publishedBlogEntries = await getCollection("blog", ({ data }) => {
 });
 
 // Sort content entries by publication date
-publishedBlogEntries.sort(function (a, b) {
+publishedBlogEntries.sort((a, b) => {
   return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
 });
 ---
@@ -19,9 +19,9 @@ publishedBlogEntries.sort(function (a, b) {
 <Layout title="Blog">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Our Blog</Fragment>
+      <Fragment slot="title">My Blog</Fragment>
       <Fragment slot="desc">
-        We write about building startups and thoughts going on our mind.
+        Dev logs, experiments, and things I’ve learned along the way.
       </Fragment>
     </Sectionhead>
     <main class="mt-16">
@@ -46,18 +46,14 @@ publishedBlogEntries.sort(function (a, b) {
                       {blogPostEntry.data.category}
                     </span>
 
-                    <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
+                    <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1">
                       {blogPostEntry.data.title}
                     </h2>
 
-                    <div class="flex gap-2 mt-3">
-                      <span class="text-gray-400">
-                        {blogPostEntry.data.author}
-                      </span>
-                      <span class="text-gray-400">• </span>
-                      <time
-                        class="text-gray-400"
-                        datetime={blogPostEntry.data.publishDate.toISOString()}>
+                    <div class="flex gap-2 mt-3 text-sm text-gray-500">
+                      <span>By Michael Robin K.</span>
+                      <span>•</span>
+                      <time datetime={blogPostEntry.data.publishDate.toISOString()}>
                         {blogPostEntry.data.publishDate.toDateString()}
                       </time>
                     </div>
